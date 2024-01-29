@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spam Detection</title>
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+		<br><br>
+		<div class="bg-image" style="background-image: url('https://drive.google.com/uc?export=view&id=1VUoCWwWlBTuHgoXUewY55JT_Lm8zvHfX')">
+		<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-md-6 img-thumbnail">
+			<h3 class="text-center text-primary">Spam Detection</h3><hr>
+
+			<form method="post" action="{{ url_for('home') }}">
+				<div class="form-group">
+					<label>Enter Content</label>
+					<input type="text" name="message" class="form-control">
+				</div>
+				<div class="text-right">
+					<button class="btn btn-warning">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<br><br>
+	{% if data!="" %}
+	<div class="row justify-content-center" id="demo">
+		<div class="col-md-6 img-thumbnail">
+			<h3 class="text-center text-primary">Detected Spam</h3><hr>
+				{{ data }}
+		</div>
+	</div>
+	{% endif %}
+
+	<script>
+function myFunction() {
+  console.log(document.getElementById("demo").innerHTML);
+}
+</script>
+</div>
+</div>
+</body>
+</html>
